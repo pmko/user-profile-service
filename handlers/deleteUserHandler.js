@@ -5,7 +5,7 @@ class DeleteUserHandler {
 
   async deleteUser(id) {
     let response = {};
-    const result = await this.store.read().then(async (data) => {
+    await this.store.read().then(async (data) => {
       //remove the new user
       let index = data.findIndex(o => o.id == id);
       data.splice(index,1);

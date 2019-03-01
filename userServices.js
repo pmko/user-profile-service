@@ -15,6 +15,10 @@ exports.listUsers = function (req, res) {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify(result));
+  }).catch((err) => {
+    res.statusCode = 500;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({'success':false}));
   });
 };
 
@@ -33,6 +37,10 @@ exports.addUser = function (req, res) {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(result));
+    }).catch((err) => {
+      res.statusCode = 500;
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify({'success':false}));
     });
   });
 };
@@ -45,6 +53,10 @@ exports.deleteUser = function (req, res) {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify(result));
+  }).catch((err) => {
+    res.statusCode = 500;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({'success':false}));
   });
 };
 
@@ -55,6 +67,10 @@ exports.getUser = function (req, res) {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify(result));
+  }).catch((err) => {
+    res.statusCode = 500;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({'success':false}));
   });
 };
 

@@ -5,13 +5,12 @@ class AddUserHandlers {
 
   async addUser(postData) {
     let response = {};
-    const result = await this.store.read().then(async (data) => {
+    await this.store.read().then(async (data) => {
       //add the new user
       data.push(postData);
       //write back to file
       await this.store.write(data).then((success) => {
-        if (success) response = {'success':true};
-        else response = {'success':false};
+        response = {'success':success};
       });
     });
     return response;

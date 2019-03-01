@@ -5,7 +5,7 @@ class GetUserHandler {
 
   async getUser(id) {
     let user = {};
-    const result = await this.store.read().then((data) => {
+    await this.store.read().then((data) => {
       user = data.find(o => o.id == id);
     });
     return user;

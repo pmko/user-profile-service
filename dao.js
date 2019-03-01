@@ -17,7 +17,7 @@ DataFile.prototype.readData = function() {
 DataFile.prototype.writeData = function(file) {
   return new Promise((resolve, reject) => {
     fs.writeFile(this.filePath, JSON.stringify(file), (err) => {
-      if (err) throw err;
+      if (err) resolve(false);
       else resolve(true);
     });
   });
